@@ -2,7 +2,7 @@
 
 ## The Problem
 
-We have a mapping problem. Here's an example:  
+We have a mapping problem. Here's an example:
 NYPL and [ReCAP](https://recap.princeton.edu/) have their own set of identifiers
 for physical locations here at NYPL.  Different apps refer to these things by different identifiers
 but may want to _convert_ or map them to other known identifiers.
