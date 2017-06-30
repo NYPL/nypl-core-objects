@@ -12,7 +12,7 @@
     "standard": "6.0.8"
   },
   "scripts": {
-    "test": "standard && ./node_modules/.bin/mocha test"
+    "test": "./node_modules/.bin/standard --env mocha --globals expect && ./node_modules/.bin/mocha test"
   },
   "repository": {
     "type": "git",
