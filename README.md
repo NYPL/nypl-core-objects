@@ -22,7 +22,7 @@ see the [Supported Object Types](#supported-object-types) section.
 ### From Github
 
 ```
- "@nypl/scsb-rest-client": "https://github.com/NYPL/nypl-core-objects.git#SOME-TAG-OR-REF"
+ "@nypl/nypl-core-objects": "https://github.com/NYPL/nypl-core-objects.git#SOME-TAG-OR-REF"
 ```
 
 ### From NPM
