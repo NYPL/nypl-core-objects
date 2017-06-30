@@ -1,0 +1,27 @@
+{
+  "name": "@nypl/nypl-core-objects",
+  "version": "1.0.0",
+  "description": "Exposes objects from NYPL/nypl-core as easy-to-work-with datastructures",
+  "main": "nypl-core-objects.js",
+  "dependencies": {
+    "request": "2.53.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "2.2.5",
+    "standard": "6.0.8"
+  },
+  "scripts": {
+    "test": "standard && ./node_modules/.bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYPL/nypl-core-objects.git"
+  },
+  "author": "The New York Public Library",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NYPL/nypl-core-objects/issues"
+  },
+  "homepage": "https://github.com/NYPL/nypl-core-objects#readme"
+}
