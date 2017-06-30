@@ -4,7 +4,7 @@
   "description": "Exposes objects from NYPL/nypl-core as easy-to-work-with datastructures",
   "main": "nypl-core-objects.js",
   "dependencies": {
-    "request": "2.53.0"
+    "sync-request": "^4.1.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
