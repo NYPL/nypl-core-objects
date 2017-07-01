@@ -1,17 +1,7 @@
-const request = require('sync-request')
+const FromReCapCustomerCodeFactory = require('./lib/from_recap_customer_code_factory.js')
 
 module.exports = (maptype) => {
   if (maptype === 'from-recap-customer-codes') {
-    
-    let locationsJsonLD = JSON.parse(request('GET', 'https://raw.githubusercontent.com/NYPL/nypl-core/master/vocabularies/json-ld/locations.json').getBody())
-    let recapCustomerCodes = JSON.parse(request('GET', 'https://raw.githubusercontent.com/NYPL/nypl-core/master/vocabularies/json-ld/recapCustomerCodes.json').getBody())
-
-    // Bring down latest files
-    //
-    //
-    // create the datastructure
-
-    // return the datastructure
-    return {}
+    return FromReCapCustomerCodeFactory.mapping()
   }
 }
