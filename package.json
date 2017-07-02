@@ -4,6 +4,7 @@
   "description": "Exposes objects from NYPL/nypl-core as easy-to-work-with datastructures",
   "main": "nypl-core-objects.js",
   "dependencies": {
+    "jsonld": "^0.4.5",
     "sync-request": "^4.1.0"
   },
   "devDependencies": {
