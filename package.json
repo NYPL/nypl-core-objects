@@ -5,6 +5,7 @@
   "main": "nypl-core-objects.js",
   "dependencies": {
     "jsonld": "^0.4.5",
+    "just-flatten": "^1.0.0",
     "sync-request": "^4.1.0"
   },
   "devDependencies": {

@@ -2,6 +2,6 @@ const ByRecapCustomerCodeFactory = require('./lib/by_recap_customer_code_factory
 
 module.exports = (maptype) => {
   if (maptype === 'by-recap-customer-codes') {
-    return ByRecapCustomerCodeFactory.mapping()
+    return ByRecapCustomerCodeFactory.createMapping()
   }
 }

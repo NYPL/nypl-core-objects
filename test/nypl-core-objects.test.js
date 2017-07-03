@@ -26,9 +26,21 @@ describe('nypl-core-objects', function () {
   it('has recap customer codes at its top level')
 
   describe('for each customer code', function () {
-    // TODO: I don't know if this one belongs in this block
-    it('reports it\'s ability to be EDDable')
-    it('has a non-empty displayName')
-    it('has a non-empty Array of recapDeliveryLocations')
+    it('reports eddRequestable as a boolean', function () {
+      expect(this.byRecapCustomerCode['NH']['eddRequestable']).to.be.a('boolean')
+    })
+
+    it('has a non-empty label', function () {
+      expect(this.byRecapCustomerCode['NH']['label']).to.not.be.a('undefined')
+    })
+
+    it('has a non-empty Array of sierraDeliveryLocations', function () {
+      let deliveryLocations = this.byRecapCustomerCode['NH']['sierraDeliveryLocations']
+      expect(deliveryLocations).to.not.be.empty
+      deliveryLocations.forEach((deliveryLocation) => {
+        expect(deliveryLocation['code']).to.not.be.a('undefined')
+        expect(deliveryLocation['label']).to.not.be.a('undefined')
+      })
+    })
   })
 })
