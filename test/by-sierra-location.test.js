@@ -2,7 +2,6 @@ let expect = require('chai').expect
 const sinon = require('sinon')
 const fs = require('fs')
 const path = require('path')
-const flatten = require('just-flatten')
 
 function takeThisPartyOffline () {
   let BySierraLocationFactory = require('../lib/by_sierra_location_factory')
@@ -29,12 +28,28 @@ describe('by-sierra-location', function () {
       })
     })
 
-    it('has either some deliveryLocations or a recapLocation', function () {
+    it('has either some sierraDeliveryLocations or a recapLocation', function () {
       Object.keys(this.bySierraLocation).forEach((sierraCode) => {
         expect(this.bySierraLocation[sierraCode]).to.satisfy(function (location) {
-          console.log('location: ', location)
-          return location.sierraDeliveryLocations.length > 0 || location.recapDeliveryLocations.length > 0
+          return location.sierraDeliveryLocations.length > 0 || location.recapLocation
         })
+      })
+    })
+
+    it('if it has a recapLocation, that location will have code, label, and eddRequestable properties', function () {
+      // get all Sierra Locations as an Array
+      let allSierraLocations = Object.keys(this.bySierraLocation).map((key) => this.bySierraLocation[key])
+
+      let locationsWithRecapLocation = allSierraLocations.filter((sierraLocation) => {
+        return sierraLocation.recapLocation
+      })
+
+      expect(locationsWithRecapLocation).to.not.be.empty
+
+      locationsWithRecapLocation.forEach((location) => {
+        expect(location.recapLocation.code).to.be.a('string')
+        expect(location.recapLocation.label).to.be.a('string')
+        expect(location.recapLocation.eddRequestable).to.be.a('boolean')
       })
     })
   })
