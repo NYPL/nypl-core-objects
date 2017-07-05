@@ -39,7 +39,9 @@ describe('nypl-core-objects', function () {
 
   describe('for each customer code', function () {
     it('reports eddRequestable as a boolean', function () {
-      expect(this.byRecapCustomerCode['NH']['eddRequestable']).to.be.a('boolean')
+      for (let customerCode in this.byRecapCustomerCode) {
+        expect(this.byRecapCustomerCode[customerCode]['eddRequestable']).to.be.a('boolean')
+      }
     })
 
     it('has a non-empty label', function () {
