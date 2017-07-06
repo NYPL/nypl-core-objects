@@ -35,7 +35,6 @@ see the [Supported Object Types](#supported-object-types) section.
 
 ```javascript
 // create a mapping from Sierra codes to Recap Codes
-
 let bySierraLocation = require('@nypl/nypl-core-objects')('by-sierra-location')
 
 // get its ReCAP code
