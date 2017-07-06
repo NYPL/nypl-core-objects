@@ -33,6 +33,23 @@ see the [Supported Object Types](#supported-object-types) section.
 
 ## Usage
 
+```javascript
+// create a mapping from Sierra codes to Recap Codes
+
+let bySierraLocation = require('@nypl/nypl-core-objects')('by-sierra-location')
+
+// get its ReCAP code
+let code = bySierraLocation['mal']['recapLocation']['code']
+
+// get its ReCAP name
+let humanName = bySierraLocation['mal']['recapLocation']['label']
+
+// get its ReCAP eddRequestablity
+let EddRequestability = bySierraLocation['mal']['recapLocation']['eddRequestable']
+```
+
+For a comprehensive list of availability see the implementation of factories mentioned `nypl-core-objects.js`
+
 ### Supported Object Types
 
 * Locations (from [locations.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/locations.json) & [recapCustomerCodes.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/recapCustomerCodes.json))
