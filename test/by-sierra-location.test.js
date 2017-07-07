@@ -54,5 +54,12 @@ describe('by-sierra-location', function () {
         expect(location.recapLocation.eddRequestable).to.be.a('boolean')
       })
     })
+
+    it('has collectionTypes', function () {
+      Object.keys(this.bySierraLocation).forEach((sierraCode) => {
+        expect(this.bySierraLocation[sierraCode].collectionTypes).to.be.a('array')
+        expect(this.bySierraLocation[sierraCode].collectionTypes).to.not.be.empty
+      })
+    })
   })
 })
