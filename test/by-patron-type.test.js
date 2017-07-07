@@ -9,7 +9,7 @@ function takeThisPartyOffline () {
   FactoryBase._getPatronTypeJsonLD = mockedPatronTypeJSONLD
 }
 
-describe('by-sierra-location', function () {
+describe('by-patron-type', function () {
   before(function () {
     takeThisPartyOffline()
     this.byPatronType = require('../nypl-core-objects')('by-patron-type')
