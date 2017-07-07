@@ -4,9 +4,11 @@ const fs = require('fs')
 const path = require('path')
 
 function takeThisPartyOffline () {
-  let BySierraLocationFactory = require('../lib/by_sierra_location_factory')
+  let FactoryBase = require('../lib/factory_base')
   let mockedSierra = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/locations.json'))))
-  BySierraLocationFactory._getSierraJsonLD = mockedSierra
+  let mockedRecap = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/recapCustomerCodes.json'))))
+  FactoryBase._getSierraJsonLD = mockedSierra
+  FactoryBase._getRecapJsonLD = mockedRecap
 }
 
 describe('by-sierra-location', function () {
