@@ -4,18 +4,20 @@ const fs = require('fs')
 const path = require('path')
 
 function takeThisPartyOffline () {
+  // Set up sinon mocking on to direct mapping file requests to disc
   let FactoryBase = require('../lib/factory_base')
-  let mockedSierra = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/locations.json'))))
-  let mockedRecap = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/recapCustomerCodes.json'))))
-  FactoryBase._getSierraJsonLD = mockedSierra
-  FactoryBase._getRecapJsonLD = mockedRecap
+  sinon.stub(FactoryBase, '_getJsonLD').callsFake((filename) => {
+    var jsonPath = path.join(__dirname, `./resources/${filename}.json`)
+
+    if (!fs.existsSync(jsonPath)) throw new FactoryBase.MappingNameError(`Unrecognized mapping file: ${filename}`)
+
+    return JSON.parse(fs.readFileSync(jsonPath))
+  })
 }
 
 describe('generic-mapping', function () {
   before(function () {
-    // takeThisPartyOffline()
-    takeThisPartyOffline
-    this.catalogItemTypeMapping = require('../nypl-core-objects')('by-catalog-item-types')
+    takeThisPartyOffline()
   })
 
   it('by-foo-bar triggers MappingNameError error', function (done) {
