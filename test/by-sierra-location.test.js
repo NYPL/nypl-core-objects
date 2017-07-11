@@ -58,6 +58,7 @@ describe('by-sierra-location', function () {
     it('has collectionTypes', function () {
       Object.keys(this.bySierraLocation).forEach((sierraCode) => {
         expect(this.bySierraLocation[sierraCode].collectionTypes).to.be.a('array')
+        expect(this.bySierraLocation[sierraCode].deliveryLocationTypes).to.be.a('array')
         expect(this.bySierraLocation[sierraCode].collectionTypes).to.not.be.empty
       })
     })
