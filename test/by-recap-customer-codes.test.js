@@ -62,6 +62,7 @@ describe('by-recap-customer-codes', function () {
     allSierraDeliverLocations.forEach((deliveryLocation) => {
       expect(deliveryLocation['code']).to.not.be.a('undefined')
       expect(deliveryLocation['label']).to.not.be.a('undefined')
+      expect(deliveryLocation['deliveryLocationTypes']).to.be.a('array')
     })
   })
 })
