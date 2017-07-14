@@ -29,6 +29,12 @@ describe('by-recap-customer-codes', function () {
     }
   })
 
+  it('gives the customer code\'s sierraLocation', function () {
+    let sierraLocation = this.byRecapCustomerCode['NH']['sierraLocation']
+    expect(sierraLocation['code']).to.eql('mal')
+    expect(sierraLocation['label']).to.eql('SASB - Service Desk Rm 315')
+  })
+
   it('has recap customer codes at its top level')
 
   describe('for each customer code', function () {
