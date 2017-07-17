@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+// This executable can get more sophisticated in the future.
+// Possible improvements are:
+//   * Using reflection to not need a manual mapping_files Array
+//   * Taking an outputdirectory flag
+
 const fs = require('fs')
 const path = require('path')
 

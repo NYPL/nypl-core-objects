@@ -17,6 +17,28 @@ This node module live-loads the json-ld from `NYPL/nypl-core` in and turns them
 into very parsable data-structures for use in your app. **This doesn't expose all the mappings yet**,
 see the [Supported Object Types](#supported-object-types) section.
 
+### It Can Also Write Those Mappings To Disk
+
+Some non-JS apps want to use these mappings.
+By running: `./bin/write-mappings.js` - the mappings are written to `./output/`.
+
+Those files can be pushed to S3 so any application can parse them as simple JSON.
+This repo may, one day, stop exporting objects and just be a means of generating
+JSON artifacts for pushing to S3.
+
+#### Pushing to S3
+
+`aws s3 cp output s3://bucket-name/ --recursive --acl public-read --cache-control max-age=300 --profile your-aws-cli-profile-name`
+
+Note this command is `cp`, not `sync`. This uploads any new or updated files, but does not remove deleted files.
+
+Our bucket names in the **nypl-digital-dev** account are:
+
+* `nypl-core-objects-mapping-qa`
+* `nypl-core-objects-mapping-production`
+
+We'll flesh out documentation on using mappings from S3 as more apps take this on.
+
 ## Install
 
 ### From Github
