@@ -33,6 +33,7 @@ describe('by-recap-customer-codes', function () {
     let sierraLocation = this.byRecapCustomerCode['NH']['sierraLocation']
     expect(sierraLocation['code']).to.eql('mal')
     expect(sierraLocation['label']).to.eql('SASB - Service Desk Rm 315')
+    expect(sierraLocation['locationsApiSlug']).to.equal('general-research-division')
   })
 
   it('has recap customer codes at its top level')
@@ -51,6 +52,12 @@ describe('by-recap-customer-codes', function () {
     it('has a non-empty Array of sierraDeliveryLocations', function () {
       let deliveryLocations = this.byRecapCustomerCode['NH']['sierraDeliveryLocations']
       expect(deliveryLocations).to.not.be.empty
+      deliveryLocations.forEach(function (deliveryLocation) {
+        expect(deliveryLocation.code).to.not.be.empty
+        expect(deliveryLocation.label).to.not.be.empty
+        // Not only should locationsApiSlug exist here. It should have a value
+        expect(deliveryLocation.locationsApiSlug).to.not.be.empty
+      })
     })
   })
 
