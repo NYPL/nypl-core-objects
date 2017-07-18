@@ -5,7 +5,7 @@ const FactoryBase = require('./lib/factory_base')
 
 module.exports = (maptype) => {
   switch (maptype) {
-    case 'by-recap-customer-codes':
+    case 'by-recap-customer-code':
       return ByRecapCustomerCodeFactory.createMapping()
     case 'by-sierra-location':
       return BySierraLocationFactory.createMapping()

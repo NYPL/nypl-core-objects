@@ -17,7 +17,7 @@ describe('by-recap-customer-codes', function () {
     takeThisPartyOffline()
     this.withSierraDeliveryLocations = []
     this.withoutSierraDeliveryLocations = []
-    this.byRecapCustomerCode = require('../nypl-core-objects')('by-recap-customer-codes')
+    this.byRecapCustomerCode = require('../nypl-core-objects')('by-recap-customer-code')
 
     for (let customerCode in this.byRecapCustomerCode) {
       let entry = this.byRecapCustomerCode[customerCode]

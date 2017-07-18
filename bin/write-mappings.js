@@ -7,18 +7,22 @@
 
 const fs = require('fs')
 const path = require('path')
+const NyplCoreObjects = require(path.join(__dirname, '..', 'nypl-core-objects'))
 
-let mapping_files = [
-  'by_patron_type_factory',
-  'by_recap_customer_code_factory',
-  'by_sierra_location_factory'
+let mapping_names = [
+  'by_patron_type',
+  'by_recap_customer_code',
+  'by_sierra_location',
+  'by_statuses'
 ]
 
 let filesWritten = []
 
-mapping_files.forEach((mapping_file) => {
-  let mapping = require(path.join(__dirname, '..', 'lib', mapping_file)).createMapping()
-  let output_file_name = `${mapping_file.replace('_factory', '')}.json`
+mapping_names.forEach((mapping_name) => {
+  let dasherizedName = mapping_name.replace(/_/g, '-')
+  console.log(dasherizedName)
+  let mapping = NyplCoreObjects(dasherizedName)
+  let output_file_name = `${mapping_name}.json`
 
   fs.writeFile(path.join(__dirname, '..', 'output', output_file_name), JSON.stringify(mapping), function (err) {
     if (err) {
