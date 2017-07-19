@@ -33,17 +33,15 @@ describe('by-sierra-location', function () {
         sierraLocations.forEach(function (sierraLocation) {
           expect(sierraLocation.code).to.not.be.empty
           expect(sierraLocation.label).to.not.be.empty
-          // the key always exists, but the value is legitimately null some times
+          // the 'locationsApiSlug' key always exists, but the value is legitimately null some times
           expect('locationsApiSlug' in sierraLocation).to.equal(true)
         })
       })
     })
 
-    it('has either some sierraDeliveryLocations or a recapLocation', function () {
+    it('has a requestable property', function () {
       Object.keys(this.bySierraLocation).forEach((sierraCode) => {
-        expect(this.bySierraLocation[sierraCode]).to.satisfy(function (location) {
-          return location.sierraDeliveryLocations.length > 0 || location.recapLocation
-        })
+        expect('requestable' in this.bySierraLocation[sierraCode]).to.eql(true)
       })
     })
 
