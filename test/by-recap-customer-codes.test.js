@@ -57,7 +57,6 @@ describe('by-recap-customer-codes', function () {
         expect(deliveryLocation.label).to.not.be.empty
         // Not only should locationsApiSlug exist here. It should have a value
         expect(deliveryLocation.locationsApiSlug).to.not.be.empty
-        expect('requestable' in deliveryLocation).to.equal(true)
       })
     })
   })

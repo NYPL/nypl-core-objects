@@ -24,7 +24,7 @@ describe('by-sierra-location', function () {
   })
 
   describe('for each sierra location', function () {
-    it('has an array of deliveryLocations, each with a code, label locationsApiSlug, and requestable', function () {
+    it('has an array of deliveryLocations, each with a code, label and locationsApiSlug', function () {
       Object.keys(this.bySierraLocation).forEach((sierraCode) => {
         let sierraLocations = this.bySierraLocation[sierraCode].sierraDeliveryLocations
 
@@ -35,7 +35,6 @@ describe('by-sierra-location', function () {
           expect(sierraLocation.label).to.not.be.empty
           // the 'locationsApiSlug' key always exists, but the value is legitimately null some times
           expect('locationsApiSlug' in sierraLocation).to.equal(true)
-          expect('requestable' in sierraLocation).to.equal(true)
         })
       })
     })
