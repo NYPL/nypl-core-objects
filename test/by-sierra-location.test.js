@@ -40,11 +40,9 @@ describe('by-sierra-location', function () {
       })
     })
 
-    it('has either some sierraDeliveryLocations or a recapLocation', function () {
+    it('has a requestable property', function () {
       Object.keys(this.bySierraLocation).forEach((sierraCode) => {
-        expect(this.bySierraLocation[sierraCode]).to.satisfy(function (location) {
-          return location.sierraDeliveryLocations.length > 0 || location.recapLocation
-        })
+        expect('requestable' in this.bySierraLocation[sierraCode]).to.eql(true)
       })
     })
 
