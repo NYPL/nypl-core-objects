@@ -14,7 +14,7 @@ function takeThisPartyOffline () {
 describe('nypl-core-objects', function () {
   before(function () {
     takeThisPartyOffline()
-    this.byRecapCustomerCode = require('../nypl-core-objects')('by-recap-customer-codes')
+    this.byRecapCustomerCode = require('../nypl-core-objects')('by-recap-customer-code')
   })
 
   it('exports a simpleObject', function (done) {
