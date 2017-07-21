@@ -1,5 +1,7 @@
 # NYPL Core Objects
 
+Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch=master)](https://travis-ci.org/NYPL/nypl-core-objects)
+
 ## The Problem
 
 We have a mapping problem. Here's an example:
