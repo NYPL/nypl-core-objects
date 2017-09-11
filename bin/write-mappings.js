@@ -13,7 +13,8 @@ let mapping_names = [
   'by_patron_type',
   'by_recap_customer_code',
   'by_sierra_location',
-  'by_statuses'
+  'by_statuses',
+  'by_catalog_item_type'
 ]
 
 let filesWritten = []

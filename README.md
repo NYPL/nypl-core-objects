@@ -73,7 +73,9 @@ For a comprehensive list of availability see the implementation of factories men
 * Locations (from [locations.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/locations.json) & [recapCustomerCodes.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/recapCustomerCodes.json))
 
 * Patron Types (from [patronTypes.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/patronTypes.json))
-## Git Workflow
 
+* Catalog Item Types (from [catalogItemType.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/catalogItemTypes.json))
+
+## Git Workflow
 When you _file_ a PR - it should include a version bump.  
 When you _accept_ a PR - you should push a tag named "vTHEVERSION" (e.g. "v1.0.1")
