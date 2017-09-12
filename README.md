@@ -77,5 +77,13 @@ For a comprehensive list of availability see the implementation of factories men
 * Catalog Item Types (from [catalogItemType.json](https://github.com/NYPL/nypl-core/blob/master/vocabularies/json-ld/catalogItemTypes.json))
 
 ## Git Workflow
-When you _file_ a PR - it should include a version bump.  
-When you _accept_ a PR - you should push a tag named "vTHEVERSION" (e.g. "v1.0.1")
+
+When you want to release - you should:
+
+* run `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]`
+
+* Push the latest back to master.
+
+* Push the tag that `npm version` created to origin
+
+* `npm publish`
