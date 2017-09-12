@@ -80,10 +80,12 @@ For a comprehensive list of availability see the implementation of factories men
 
 When you want to release - you should:
 
-* run `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]`
+1. run `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]`
 
-* Push the latest back to master.
+2. Push the latest back to master.
 
-* Push the tag that `npm version` created to origin
+3. Push the tag that `npm version` created to origin
 
-* `npm publish`
+4. `npm publish`
+
+5. `npm run deploy-[qa|production]`
