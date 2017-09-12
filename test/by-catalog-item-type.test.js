@@ -32,12 +32,12 @@ describe('by-catalog-item-type', function () {
     done()
   })
 
-  it('will have "label" & "locationType" properties for each key', function () {
+  it('will have "label" & "collectionType" properties for each key', function () {
     expect(Object.keys(this.byCatalogItemType)).to.not.be.empty
     for (let key in this.byCatalogItemType) {
       let catalogItemType = this.byCatalogItemType[key]
       expect(catalogItemType['label']).to.be.a('string')
-      expect(catalogItemType['locationType']).to.not.be.empty
+      expect(catalogItemType['collectionType']).to.not.be.empty
     }
   })
 })
