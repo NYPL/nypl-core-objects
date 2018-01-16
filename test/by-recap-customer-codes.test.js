@@ -65,7 +65,7 @@ describe('by-recap-customer-codes', function () {
   // test that we have some recap customer codes that have sierraDeliveryLocations,
   // and some that don't.
   //
-  // Also test that the onces WITH sierraDeliveryLocations have certain keys
+  // Also test that the ones WITH sierraDeliveryLocations have certain keys
   it('parses some recap locations as having delivery locations, others not', function () {
     expect(this.withSierraDeliveryLocations).to.not.be.empty
     expect(this.withoutSierraDeliveryLocations).to.not.be.empty
@@ -77,5 +77,15 @@ describe('by-recap-customer-codes', function () {
       expect(deliveryLocation['label']).to.not.be.a('undefined')
       expect(deliveryLocation['deliveryLocationTypes']).to.be.a('array')
     })
+  })
+
+  // Rules for v1.3 of the customer code mappings, opens up more than one room for partner
+  // items to be delivered. Non-scholar ptypes can now have PUL and CUL items delivered to
+  // SASB locations other than the scholar rooms and including Rm 315 (5 locations total).
+  it('shows more than location for non-scholar patron types.', function () {
+    let deliveryLocations = this.byRecapCustomerCode['CR']['sierraDeliveryLocations']
+
+    expect(deliveryLocations).to.be.a('array')
+    expect(deliveryLocations.length).to.be.greaterThan(5)
   })
 })
