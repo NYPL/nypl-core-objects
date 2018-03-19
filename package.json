@@ -15,7 +15,7 @@
     "standard": "6.0.8"
   },
   "scripts": {
-    "test": "./node_modules/.bin/standard --env mocha --globals expect && ./node_modules/.bin/mocha test",
+    "test": "./node_modules/.bin/standard --env mocha && ./node_modules/.bin/mocha test",
     "build-mappings": "rm -rf ./output/*.json && node ./bin/write-mappings",
     "deploy-qa": "npm run build-mappings && aws s3 cp output s3://nypl-core-objects-mapping-qa/ --recursive --acl public-read --cache-control max-age=300 --profile nypl-digital-dev",
     "deploy-production": "npm run build-mappings && aws s3 cp output s3://nypl-core-objects-mapping-production/ --recursive --acl public-read --cache-control max-age=300 --profile nypl-digital-dev"

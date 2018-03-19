@@ -70,4 +70,18 @@ describe('by-sierra-location', function () {
       })
     })
   })
+
+  describe('location collectionType', function () {
+    it('nyplLocation:ft (53rd St) has collectionType "Branch"', function () {
+      expect(this.bySierraLocation['ft'].collectionTypes).to.be.a('array')
+      expect(this.bySierraLocation['ft'].collectionTypes).to.have.lengthOf(1)
+      expect(this.bySierraLocation['ft'].collectionTypes).to.have.members(['Branch'])
+    })
+
+    it('nyplLocation:ia (Electronic Material for Adults) has collectionType "Branch", "Research"', function () {
+      expect(this.bySierraLocation['ia'].collectionTypes).to.be.a('array')
+      expect(this.bySierraLocation['ia'].collectionTypes).to.have.lengthOf(2)
+      expect(this.bySierraLocation['ia'].collectionTypes).to.have.members(['Research', 'Branch'])
+    })
+  })
 })
