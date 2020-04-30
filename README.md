@@ -36,6 +36,10 @@ JSON artifacts for pushing to S3.
 This command is `cp`, not `sync`.
 It uploads any new or updated files, but does not remove deleted files.
 
+To push a pre-release to S3 for testing, set `NYPL_CORE_VERSION`, e.g.:
+
+`NYPL_CORE_VERSION=v1.0.1a npm run deploy-qa`
+
 ## Install
 
 ### From Github
