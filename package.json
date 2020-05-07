@@ -4,13 +4,12 @@
   "description": "Exposes objects from NYPL/nypl-core as easy-to-work-with datastructures",
   "main": "nypl-core-objects.js",
   "dependencies": {
-    "jsonld": "^0.4.5",
     "just-flatten": "^1.0.0",
     "sync-request": "^4.1.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
-    "mocha": "2.2.5",
+    "mocha": "^6.2.3",
     "sinon": "2.3.6",
     "standard": "6.0.8"
   },
