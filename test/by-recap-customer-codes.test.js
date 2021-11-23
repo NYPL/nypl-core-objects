@@ -1,13 +1,15 @@
-let expect = require('chai').expect
+/* eslint-disable no-unused-expressions */
+
+const expect = require('chai').expect
 const sinon = require('sinon')
 const fs = require('fs')
 const path = require('path')
 const flatten = require('just-flatten')
 
 function takeThisPartyOffline () {
-  let ByRecapCustomerCodeFactory = require('../lib/by_recap_customer_code_factory.js')
-  let mockedRecap = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/recapCustomerCodes.json'))))
-  let mockedSierra = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/locations.json'))))
+  const ByRecapCustomerCodeFactory = require('../lib/by_recap_customer_code_factory.js')
+  const mockedRecap = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/recapCustomerCodes.json'))))
+  const mockedSierra = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/locations.json'))))
   ByRecapCustomerCodeFactory._getSierraJsonLD = mockedSierra
   ByRecapCustomerCodeFactory._getRecapJsonLD = mockedRecap
 }
@@ -19,9 +21,9 @@ describe('by-recap-customer-codes', function () {
     this.withoutSierraDeliveryLocations = []
     this.byRecapCustomerCode = require('../nypl-core-objects')('by-recap-customer-code')
 
-    for (let customerCode in this.byRecapCustomerCode) {
-      let entry = this.byRecapCustomerCode[customerCode]
-      if (entry['sierraDeliveryLocations'].length > 0) {
+    for (const customerCode in this.byRecapCustomerCode) {
+      const entry = this.byRecapCustomerCode[customerCode]
+      if (entry.sierraDeliveryLocations.length > 0) {
         this.withSierraDeliveryLocations.push(entry)
       } else {
         this.withoutSierraDeliveryLocations.push(entry)
@@ -30,27 +32,27 @@ describe('by-recap-customer-codes', function () {
   })
 
   it('gives the customer code\'s sierraLocation', function () {
-    let sierraLocation = this.byRecapCustomerCode['NH']['sierraLocation']
-    expect(sierraLocation['code']).to.eql('mal')
-    expect(sierraLocation['label']).to.eql('Schwarzman Building - Main Reading Room 315')
-    expect(sierraLocation['locationsApiSlug']).to.equal('general-research-division')
+    const sierraLocation = this.byRecapCustomerCode.NH.sierraLocation
+    expect(sierraLocation.code).to.eql('mal')
+    expect(sierraLocation.label).to.eql('Schwarzman Building - Main Reading Room 315')
+    expect(sierraLocation.locationsApiSlug).to.equal('general-research-division')
   })
 
   it('has recap customer codes at its top level')
 
   describe('for each customer code', function () {
     it('reports eddRequestable as a boolean', function () {
-      for (let customerCode in this.byRecapCustomerCode) {
-        expect(this.byRecapCustomerCode[customerCode]['eddRequestable']).to.be.a('boolean')
+      for (const customerCode in this.byRecapCustomerCode) {
+        expect(this.byRecapCustomerCode[customerCode].eddRequestable).to.be.a('boolean')
       }
     })
 
     it('has a non-empty label', function () {
-      expect(this.byRecapCustomerCode['NH']['label']).to.not.be.a('undefined')
+      expect(this.byRecapCustomerCode.NH.label).to.not.be.a('undefined')
     })
 
     it('has a non-empty Array of sierraDeliveryLocations', function () {
-      let deliveryLocations = this.byRecapCustomerCode['NH']['sierraDeliveryLocations']
+      const deliveryLocations = this.byRecapCustomerCode.NH.sierraDeliveryLocations
       expect(deliveryLocations).to.not.be.empty
       deliveryLocations.forEach(function (deliveryLocation) {
         expect(deliveryLocation.code).to.not.be.empty
@@ -70,12 +72,12 @@ describe('by-recap-customer-codes', function () {
     expect(this.withSierraDeliveryLocations).to.not.be.empty
     expect(this.withoutSierraDeliveryLocations).to.not.be.empty
 
-    let allSierraDeliverLocations = this.withSierraDeliveryLocations.map((x) => { return x['sierraDeliveryLocations'] })
+    let allSierraDeliverLocations = this.withSierraDeliveryLocations.map((x) => { return x.sierraDeliveryLocations })
     allSierraDeliverLocations = flatten(allSierraDeliverLocations)
     allSierraDeliverLocations.forEach((deliveryLocation) => {
-      expect(deliveryLocation['code']).to.not.be.a('undefined')
-      expect(deliveryLocation['label']).to.not.be.a('undefined')
-      expect(deliveryLocation['deliveryLocationTypes']).to.be.a('array')
+      expect(deliveryLocation.code).to.not.be.a('undefined')
+      expect(deliveryLocation.label).to.not.be.a('undefined')
+      expect(deliveryLocation.deliveryLocationTypes).to.be.a('array')
     })
   })
 
@@ -83,7 +85,7 @@ describe('by-recap-customer-codes', function () {
   // items to be delivered. Non-scholar ptypes can now have PUL and CUL items delivered to
   // SASB locations other than the scholar rooms and including Rm 315 (5 locations total).
   it('shows more than location for non-scholar patron types.', function () {
-    let deliveryLocations = this.byRecapCustomerCode['CR']['sierraDeliveryLocations']
+    const deliveryLocations = this.byRecapCustomerCode.CR.sierraDeliveryLocations
 
     expect(deliveryLocations).to.be.a('array')
     expect(deliveryLocations.length).to.be.greaterThan(5)
