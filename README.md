@@ -97,7 +97,7 @@ When you want to release - you should:
 2. Push the latest back to master.
 3. Push the tag that `npm version` created to origin
 3. Dry-run publish to confirm the version is right and you're not including any working directory files: `npm publish --dry-run`
-4. `npm publish` (Make sure your working directory is clean as `npm publish` will publishe everything in it!)
+4. `npm publish` (Make sure your working directory is clean as `npm publish` will publish everything in it!)
 
 ### Alpha releases
 
