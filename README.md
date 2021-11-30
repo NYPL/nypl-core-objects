@@ -4,6 +4,8 @@ Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch
 
 As of version 2.0.0, this module depends on Node 14
 
+This package is [published to NPMJS here](https://www.npmjs.com/package/@nypl/nypl-core-objects).
+
 ## The Problem
 
 We have a mapping problem. Here's an example:
@@ -33,14 +35,21 @@ JSON artifacts for pushing to S3.
 
 #### Pushing to S3
 
+This being a Node module, the simplfied interface over [nypl-core](https://github.com/NYPL/nypl-core) data that this module provides is only available to Node apps. To provide a similar interface to non-Node apps, this app has a script to build a plain JSON approximation of the interface and host it in S3, for use by any app able to download and parse a JSON file. Those JSON files are built and uploaded as follows:
+
 `npm run deploy-[qa|production]`
 
-This command is `cp`, not `sync`.
-It uploads any new or updated files, but does not remove deleted files.
+You'll want to "deploy" to S3 any time an app that uses the S3 files depends on a vocabulary change recently made to NYPL-Core. For example, [RecapHoldRequestConsumer uses the by_recap_customer_code mapping](https://github.com/NYPL/recap-hold-request-consumer/blob/6c02f95d2561fce6e6268c8a640f941f637948db/.travis.yml#L33), so you should update S3 files any time a ReCAP Customer Code changes.
 
 To push a pre-release to S3 for testing, set `NYPL_CORE_VERSION`, e.g.:
 
 `NYPL_CORE_VERSION=v1.0.1a npm run deploy-qa`
+
+(Note: This command is `cp`, not `sync`. It uploads any new or updated files, but does not remove deleted files.)
+
+Example files in S3:
+ * [QA by-recap-customer-code](https://nypl-core-objects-mapping-qa.s3.amazonaws.com/by_recap_customer_code.json)
+ * [Production by-sierra-location](https://nypl-core-objects-mapping-production.s3.amazonaws.com/by_sierra_location.json)
 
 ## Install
 
@@ -87,11 +96,14 @@ For a comprehensive list of availability see the implementation of factories men
 When you want to release - you should:
 
 1. run `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]`
-
 2. Push the latest back to master.
-
 3. Push the tag that `npm version` created to origin
+3. Dry-run publish to confirm the version is right and you're not including any working directory files: `npm publish --dry-run`
+4. `npm publish` (Make sure your working directory is clean as `npm publish` will publish everything in it!)
 
-4. `npm publish`
+### Alpha releases
 
-5. `npm run deploy-[qa|production]`
+If you want to publish an alpha release:
+
+1. Change version in package.json to a valid alpha semver (e.g. `"version": "2.0.0-alpha.1"`)
+2. Publish to NPMjs: `npm publish`
