@@ -1,13 +1,15 @@
-let expect = require('chai').expect
+/* eslint-disable no-unused-expressions */
+
+const expect = require('chai').expect
 const sinon = require('sinon')
 const fs = require('fs')
 const path = require('path')
 
-let FactoryBase = require('../lib/factory_base')
+const FactoryBase = require('../lib/factory_base')
 
 function takeThisPartyOffline () {
   // Overwrite FactoryBase._getJsonLD with a stub that returns local json:
-  let mockedCatalogItemTypeJSONLD = function () {
+  const mockedCatalogItemTypeJSONLD = function () {
     return JSON.parse(fs.readFileSync(path.join(__dirname, './resources/catalogItemTypes.json')))
   }
   sinon.stub(FactoryBase, '_getJsonLD').callsFake(mockedCatalogItemTypeJSONLD)
@@ -34,10 +36,11 @@ describe('by-catalog-item-type', function () {
 
   it('will have "label" & "collectionType" properties for each key', function () {
     expect(Object.keys(this.byCatalogItemType)).to.not.be.empty
-    for (let key in this.byCatalogItemType) {
-      let catalogItemType = this.byCatalogItemType[key]
-      expect(catalogItemType['label']).to.be.a('string')
-      expect(catalogItemType['collectionType']).to.not.be.empty
+
+    for (const key in this.byCatalogItemType) {
+      const catalogItemType = this.byCatalogItemType[key]
+      expect(catalogItemType.label).to.be.a('string')
+      expect(catalogItemType.collectionType).to.not.be.empty
     }
   })
 })
