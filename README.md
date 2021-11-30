@@ -39,6 +39,8 @@ This being a Node module, the simplfied interface over [nypl-core](https://githu
 
 `npm run deploy-[qa|production]`
 
+You'll want to "deploy" to S3 any time an app that uses the S3 files depends on a vocabulary change recently made to NYPL-Core. For example, [RecapHoldRequestConsumer uses the by_recap_customer_code mapping](https://github.com/NYPL/recap-hold-request-consumer/blob/6c02f95d2561fce6e6268c8a640f941f637948db/.travis.yml#L33), so you should update S3 files any time a ReCAP Customer Code changes.
+
 To push a pre-release to S3 for testing, set `NYPL_CORE_VERSION`, e.g.:
 
 `NYPL_CORE_VERSION=v1.0.1a npm run deploy-qa`
