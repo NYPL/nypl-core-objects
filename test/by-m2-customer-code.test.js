@@ -6,22 +6,11 @@ const path = require('path')
 const flatten = require('just-flatten')
 
 function takeThisPartyOffline () {
-  console.log('taking this party offline')
   const ByM2CustomerCodeFactory = require('../lib/by_m2_customer_code_factory.js')
-  const mockedM2 = () => {
-    const value = (JSON.parse(fs.readFileSync(path.join(__dirname, './resources/m2CustomerCodes.json'))))
-    console.log('returning m2 value: ', JSON.stringify(value, null, 2))
-    return value
-  }
-  
-  const mockedSierra = () => {
-    const value = (JSON.parse(fs.readFileSync(path.join(__dirname, './resources/m2Locations.json'))))
-    console.log('returning sierra value: ', JSON.stringify(value, null, 2))
-    return value
-  }
+  const mockedM2 = () => (JSON.parse(fs.readFileSync(path.join(__dirname, './resources/m2CustomerCodes.json'))))
+
+  const mockedSierra = () => (JSON.parse(fs.readFileSync(path.join(__dirname, './resources/m2Locations.json'))))
   ByM2CustomerCodeFactory._getSierraJsonLD = mockedSierra
-  console.log('savedM2: ', ByM2CustomerCodeFactory._getM2JsonLD())
-  // fs.writeFileSync(path.join(__dirname, './resources/m2CustomerCodes.json'), JSON.stringify(ByM2CustomerCodeFactory._getM2JsonLD(), null, 2))
   ByM2CustomerCodeFactory._getM2JsonLD = mockedM2
 }
 
