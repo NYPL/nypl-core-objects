@@ -1,5 +1,7 @@
-let expect = require('chai').expect
-let forcetoFlatArray = require('../lib/jsonld-parse-utils').forcetoFlatArray
+/* eslint-disable no-unused-expressions */
+
+const expect = require('chai').expect
+const forcetoFlatArray = require('../lib/jsonld-parse-utils').forcetoFlatArray
 
 describe('forcetoFlatArray', function () {
   it('takes anything and turns it into a flat array', function () {

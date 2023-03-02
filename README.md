@@ -5,6 +5,8 @@
 
 Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch=master)](https://travis-ci.org/NYPL/nypl-core-objects)
 
+As of version 2.0.0, this module depends on Node 14
+
 ## The Problem
 
 We have a mapping problem. Here's an example:
