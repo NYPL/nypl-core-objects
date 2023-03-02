@@ -9,7 +9,7 @@ const fs = require('fs')
 const path = require('path')
 const NyplCoreObjects = require(path.join(__dirname, '..', 'nypl-core-objects'))
 
-let mapping_names = [
+const mappingNames = [
   'by_patron_type',
   'by_recap_customer_code',
   'by_sierra_location',
@@ -17,19 +17,19 @@ let mapping_names = [
   'by_catalog_item_type'
 ]
 
-let filesWritten = []
+const filesWritten = []
 
-mapping_names.forEach((mapping_name) => {
-  let dasherizedName = mapping_name.replace(/_/g, '-')
+mappingNames.forEach((mappingName) => {
+  const dasherizedName = mappingName.replace(/_/g, '-')
   console.log(dasherizedName)
-  let mapping = NyplCoreObjects(dasherizedName)
-  let output_file_name = `${mapping_name}.json`
+  const mapping = NyplCoreObjects(dasherizedName)
+  const outputFileName = `${mappingName}.json`
 
-  fs.writeFile(path.join(__dirname, '..', 'output', output_file_name), JSON.stringify(mapping), function (err) {
+  fs.writeFile(path.join(__dirname, '..', 'output', outputFileName), JSON.stringify(mapping), function (err) {
     if (err) {
       return console.log(err)
     }
-    filesWritten.push(output_file_name)
-    console.log(`saving ${output_file_name}`)
+    filesWritten.push(outputFileName)
+    console.log(`saving ${outputFileName}`)
   })
 })
