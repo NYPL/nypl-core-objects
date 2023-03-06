@@ -84,14 +84,28 @@ For a comprehensive list of availability see the implementation of factories men
 
 ## Git Workflow
 
-When you want to release - you should:
+This repo has two target branches:
+ - `master` for Node14+ support (module versions 2x)
+ - `v1-node6` for Node6 support (module version 1x)
 
-1. run `npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease]`
+All PRs should target `master` and/or `v1-node6`. Business logic changes should generally result in two PRs - one for each target branch.
 
-2. Push the latest back to master.
+Once the PR has been approved and merged, check out the target branch locally and:
 
-3. Push the tag that `npm version` created to origin
+1. **Bump the version**:
+ - Bump the version number in `package.json`
+ - Run `nvm use; npm i` to update `package-lock.json`
+ - Commit changes
+ - Git tag it (e.g. `git tag -a v2.1.1`)
+ - Push changes to origin (including tags via `git push --tags`)
 
-4. `npm publish`
+2. **Publish changes to NPMJS**:
+ - Run `npm publish --dry-run` to verify nothing is being packaged that should not be!
+ - If publishing an older version (e.g. a patch to `v1.x`) add a `tag` to prevent NPM from updating the `latest` tag:
+   - `npm publish --tag legacy-node6-support`
+ - If publishing an update to the default major branch (2.x at writing):
+   - `npm publish`
 
-5. `npm run deploy-[qa|production]`
+3. **Optionally publish changes to S3**:
+ - To push changes to S3 (i.e. if the changes are needed by non-Node apps):
+   - `npm run deploy-[qa|production]`
