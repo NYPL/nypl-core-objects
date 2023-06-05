@@ -1,6 +1,6 @@
 {
   "name": "@nypl/nypl-core-objects",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Exposes objects from NYPL/nypl-core as easy-to-work-with datastructures",
   "main": "nypl-core-objects.js",
   "dependencies": {
