@@ -3,10 +3,13 @@ const ByM2CustomerCodeFactory = require('./lib/by_m2_customer_code_factory')
 const BySierraLocationFactory = require('./lib/by_sierra_location_factory')
 const ByPatronTypeFactory = require('./lib/by_patron_type_factory')
 const ByCatalogItemTypeFactory = require('./lib/by_catalog_item_type_factory')
+const ByFulfillmentFactory = require('./lib/by_fulfillment_factory')
 const FactoryBase = require('./lib/factory_base')
 
 module.exports = (maptype) => {
   switch (maptype) {
+    case 'by-fulfillment':
+      return ByFulfillmentFactory.createMapping()
     case 'by-recap-customer-code':
       return ByRecapCustomerCodeFactory.createMapping()
     case 'by-recap-customer-codes':
