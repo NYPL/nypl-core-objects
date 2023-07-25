@@ -41,6 +41,14 @@ describe('by-sierra-location', function () {
       })
     })
 
+    it('has a deliverableToResolution property', function () {
+      Object.keys(this.bySierraLocation)
+        .forEach((code) => {
+          expect('deliverableToResolution' in this.bySierraLocation[code])
+            .to.eql(true)
+        })
+    })
+
     it('has a requestable property', function () {
       Object.keys(this.bySierraLocation).forEach((sierraCode) => {
         expect('requestable' in this.bySierraLocation[sierraCode]).to.eql(true)
