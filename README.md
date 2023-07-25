@@ -101,11 +101,13 @@ Once the PR has been approved and merged, check out the target branch locally an
  - Push changes to origin (including tags via `git push --tags`)
 
 2. **Publish changes to NPMJS**:
- - Run `npm publish --dry-run` to verify nothing is being packaged that should not be!
- - If publishing an older version (e.g. a patch to `v1.x`) add a `tag` to prevent NPM from updating the `latest` tag:
-   - `npm publish --tag legacy-node6-support`
  - If publishing an update to the default major branch (2.x at writing):
+   - Run `npm publish --dry-run` to verify nothing is being packaged that should not be
    - `npm publish`
+ - If publishing an older version (e.g. a patch to `v1.x`) add a `tag` to prevent NPM from updating the `latest` tag:
+   - do not run `npm publish --dry-run`. This flag is not supported by node 6. 
+   - cross your fingers
+   - `npm publish --tag legacy-node6-support`
 
 3. **Optionally publish changes to S3**:
  - To push changes to S3 (i.e. if the changes are needed by non-Node apps):
