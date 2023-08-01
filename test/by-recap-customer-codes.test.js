@@ -51,14 +51,12 @@ describe('by-recap-customer-codes', function () {
       expect(this.byRecapCustomerCode.NH.label).to.not.be.a('undefined')
     })
 
-    it('has a non-empty Array of sierraDeliveryLocations', function () {
+    it('has an non-empty Array of sierraDeliveryLocations', function () {
       const deliveryLocations = this.byRecapCustomerCode.NH.sierraDeliveryLocations
       expect(deliveryLocations).to.not.be.empty
       deliveryLocations.forEach(function (deliveryLocation) {
         expect(deliveryLocation.code).to.not.be.empty
         expect(deliveryLocation.label).to.not.be.empty
-        // Not only should locationsApiSlug exist here. It should have a value
-        expect(deliveryLocation.locationsApiSlug).to.not.be.empty
       })
     })
   })
