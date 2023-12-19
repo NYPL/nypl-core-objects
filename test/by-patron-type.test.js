@@ -1,21 +1,14 @@
 /* eslint-disable no-unused-expressions */
-
 const expect = require('chai').expect
-const sinon = require('sinon')
-const fs = require('fs')
-const path = require('path')
-
-function takeThisPartyOffline () {
-  const FactoryBase = require('../lib/factory_base')
-  const mockedPatronTypeJSONLD = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/patronTypes.json'))))
-  FactoryBase._getPatronTypeJsonLD = mockedPatronTypeJSONLD
-}
+const { takeThisPartyOffline, revertTakingOfPartyOffline } = require('./test-helper')
 
 describe('by-patron-type', function () {
-  before(function () {
+  before(async function () {
     takeThisPartyOffline()
-    this.byPatronType = require('../nypl-core-objects')('by-patron-type')
+
+    this.byPatronType = await require('../nypl-core-objects')('by-patron-type')
   })
+  after(revertTakingOfPartyOffline)
 
   it('exports a simpleObject', function (done) {
     expect(this.byPatronType).to.not.equal(undefined)

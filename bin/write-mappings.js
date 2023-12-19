@@ -14,15 +14,15 @@ const mappingNames = [
   'by_recap_customer_code',
   'by_sierra_location',
   'by_statuses',
-  'by_catalog_item_type'
+  'by_catalog_item_type',
+  'by_fulfillment'
 ]
 
 const filesWritten = []
 
-mappingNames.forEach((mappingName) => {
+mappingNames.forEach(async (mappingName) => {
   const dasherizedName = mappingName.replace(/_/g, '-')
-  console.log(dasherizedName)
-  const mapping = NyplCoreObjects(dasherizedName)
+  const mapping = await NyplCoreObjects(dasherizedName)
   const outputFileName = `${mappingName}.json`
 
   fs.writeFile(path.join(__dirname, '..', 'output', outputFileName), JSON.stringify(mapping), function (err) {

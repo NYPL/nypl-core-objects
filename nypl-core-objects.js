@@ -12,9 +12,6 @@ module.exports = (maptype) => {
       return ByFulfillmentFactory.createMapping()
     case 'by-recap-customer-code':
       return ByRecapCustomerCodeFactory.createMapping()
-    case 'by-recap-customer-codes':
-      console.warn('\'by-recap-customer-codes\' is DEPRECATED. Use \'by-recap-customer-code\'')
-      return ByRecapCustomerCodeFactory.createMapping()
     case 'by-sierra-location':
       return BySierraLocationFactory.createMapping()
     case 'by-patron-type':
