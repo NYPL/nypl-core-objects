@@ -1,25 +1,15 @@
 /* eslint-disable no-unused-expressions */
 
 const expect = require('chai').expect
-const fs = require('fs')
-const path = require('path')
 const flatten = require('just-flatten')
-
-function takeThisPartyOffline () {
-  const ByM2CustomerCodeFactory = require('../lib/by_m2_customer_code_factory.js')
-  const mockedM2 = () => (JSON.parse(fs.readFileSync(path.join(__dirname, './resources/m2CustomerCodes.json'))))
-
-  const mockedSierra = () => (JSON.parse(fs.readFileSync(path.join(__dirname, './resources/m2Locations.json'))))
-  ByM2CustomerCodeFactory._getSierraJsonLD = mockedSierra
-  ByM2CustomerCodeFactory._getM2JsonLD = mockedM2
-}
+const { takeThisPartyOffline, revertTakingOfPartyOffline } = require('./test-helper')
 
 describe('by-m2-customer-codes', function () {
-  before(function () {
+  before(async function () {
     takeThisPartyOffline()
     this.withSierraDeliveryLocations = []
     this.withoutSierraDeliveryLocations = []
-    this.byM2CustomerCode = require('../nypl-core-objects')('by-m2-customer-code')
+    this.byM2CustomerCode = await require('../nypl-core-objects')('by-m2-customer-code')
 
     for (const customerCode in this.byM2CustomerCode) {
       const entry = this.byM2CustomerCode[customerCode]
@@ -30,6 +20,8 @@ describe('by-m2-customer-codes', function () {
       }
     }
   })
+
+  after(revertTakingOfPartyOffline)
 
   it('gives the customer code\'s sierraLocation', function () {
     const sierraLocation = this.byM2CustomerCode.AC.sierraLocation
