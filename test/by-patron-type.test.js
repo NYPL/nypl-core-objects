@@ -33,13 +33,11 @@ describe('by-patron-type', function () {
     }
   })
   it('will have deliverableTo property for scholar p types', function () {
-    expect(false).to.be.true
     for (const pType in this.byPatronType) {
-      if (this.byPatronType[pType].deliverableTo) {
-        expect(false).to.be.true
-        expect(this.byPatronType[pType].deliverableTo).to.not.be.empty
-        expect(this.byPatronType[pType].code).to.be.a.string
-        expect(this.byPatronType[pType].label).to.be.a.string
+      if (this.byPatronType[pType].scholarRoom) {
+        expect(this.byPatronType[pType].scholarRoom).to.not.be.empty
+        expect(this.byPatronType[pType].scholarRoom.code).to.be.a.string
+        expect(this.byPatronType[pType].scholarRoom.label).to.be.a.string
       }
     }
   })
