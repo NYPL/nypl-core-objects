@@ -36,8 +36,8 @@ describe('by-patron-type', function () {
     for (const pType in this.byPatronType) {
       if (this.byPatronType[pType].scholarRoom) {
         expect(this.byPatronType[pType].scholarRoom).to.not.be.empty
-        expect(this.byPatronType[pType].scholarRoom.code).to.be.a.string
-        expect(this.byPatronType[pType].scholarRoom.label).to.be.a.string
+        expect(this.byPatronType[pType].scholarRoom.code).to.be.a('string')
+        expect(this.byPatronType[pType].scholarRoom.label).to.be.a('string')
       }
     }
   })
