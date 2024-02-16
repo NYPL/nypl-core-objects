@@ -1,9 +1,8 @@
 # NYPL Core Objects
 
-| Note: This is a branch of the module for apps running Node6 - Node12.
-| For apps using Node14+, use @nypl-core-objects v2x
-
 Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch=master)](https://travis-ci.org/NYPL/nypl-core-objects)
+
+As of version 2.0.0, this module depends on Node 14
 
 ## The Problem
 
