@@ -4,7 +4,7 @@ Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch
 
 As of version 2.0.0, this module depends on Node 14.
 
-As of version 3.0.0, this module fetches data asyncronously.
+As of version 3.0.0, this module fetches data asyncronously and depends on Node 18.
 
 This node module loads JSON-LD documents from `NYPL/nypl-core` and turns them into useful lookups for use in your app. These lookups are intentionally simplified representations of the data and do not include all properties in the original JSON-LD documents.
 
