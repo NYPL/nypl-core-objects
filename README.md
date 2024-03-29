@@ -2,9 +2,11 @@
 
 Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch=master)](https://travis-ci.org/NYPL/nypl-core-objects)
 
-As of version 2.0.0, this module depends on Node 14.
-
 As of version 3.0.0, this module fetches data asyncronously and depends on Node 18.
+
+Support for v2 is dropped because v2 -> v3 is a easy migration. Apps using version 2x should update to Node18+ and use version 3x.
+
+Apps using version 1x should also update to Node18 and use v3. However, because apps using that version are on much older Nodes, we may update the 1x version of this module for a while - until projects to update those Node versions complete.
 
 This node module loads JSON-LD documents from `NYPL/nypl-core` and turns them into useful lookups for use in your app. These lookups are intentionally simplified representations of the data and do not include all properties in the original JSON-LD documents.
 
@@ -61,6 +63,17 @@ let EddRequestability = bySierraLocation['mal']['recapLocation']['eddRequestable
 ```
 
 For a comprehensive list of availability see the implementation of factories mentioned `nypl-core-objects.js`
+
+### Nypl-Source-Mapper
+
+A specialized utility is included for translating between prefixed and "split" NYPL identifiers:
+
+```
+const NyplSourceMapper = require('@nypl/nypl-core-objects/lib/nypl-source-mapper')
+...
+const sourceMapper = await NyplSourceMapper.instance()
+const { nyplSource, id, type } = sourceMapper.splitIdentifier('b12082323')
+```
 
 ## Git Workflow
 
