@@ -1,3 +1,5 @@
+# Ubuntu 20+ required for Node18 ( https://docs.travis-ci.com/user/reference/linux/ ):
+dist: jammy
 language: node_js
 install: npm install
 script: npm test
