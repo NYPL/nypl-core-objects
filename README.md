@@ -6,7 +6,7 @@ As of version 3.0.0, this module fetches data asyncronously and depends on Node 
 
 Support for v2 is dropped because v2 -> v3 is a easy migration. Apps using version 2x should update to Node18+ and use version 3x.
 
-Apps using version 1x should also update to Node18 and use v3. However, because apps using that version are on much older Nodes, we may update the 1x version of this module for a while - until projects to update those Node versions complete.
+Apps using version 1x should also update to Node18 and use v3. However, because apps using that version are on much older Nodes (i.e. have a steeper migration path), we will continue to support the 1x version of this module for a while - until all apps start using the 3x version of this module.
 
 This node module loads JSON-LD documents from `NYPL/nypl-core` and turns them into useful lookups for use in your app. These lookups are intentionally simplified representations of the data and do not include all properties in the original JSON-LD documents.
 
