@@ -1,23 +1,16 @@
 /* eslint-disable no-unused-expressions */
 
 const expect = require('chai').expect
-const sinon = require('sinon')
-const fs = require('fs')
-const path = require('path')
-
-function takeThisPartyOffline () {
-  const FactoryBase = require('../lib/factory_base')
-  const mockedSierra = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/locations.json'))))
-  const mockedRecap = sinon.stub().returns(JSON.parse(fs.readFileSync(path.join(__dirname, './resources/recapCustomerCodes.json'))))
-  FactoryBase._getSierraJsonLD = mockedSierra
-  FactoryBase._getRecapJsonLD = mockedRecap
-}
+const { takeThisPartyOffline, revertTakingOfPartyOffline } = require('./test-helper')
 
 describe('by-sierra-location', function () {
-  before(function () {
+  before(async function () {
     takeThisPartyOffline()
-    this.bySierraLocation = require('../nypl-core-objects')('by-sierra-location')
+
+    this.bySierraLocation = await require('../nypl-core-objects')('by-sierra-location')
   })
+
+  after(revertTakingOfPartyOffline)
 
   it('exports a simpleObject', function (done) {
     expect(this.bySierraLocation).to.not.equal(undefined)

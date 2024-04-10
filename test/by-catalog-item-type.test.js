@@ -1,29 +1,14 @@
 /* eslint-disable no-unused-expressions */
 
 const expect = require('chai').expect
-const sinon = require('sinon')
-const fs = require('fs')
-const path = require('path')
 
-const FactoryBase = require('../lib/factory_base')
-
-function takeThisPartyOffline () {
-  // Overwrite FactoryBase._getJsonLD with a stub that returns local json:
-  const mockedCatalogItemTypeJSONLD = function () {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, './resources/catalogItemTypes.json')))
-  }
-  sinon.stub(FactoryBase, '_getJsonLD').callsFake(mockedCatalogItemTypeJSONLD)
-}
-
-function revertTakingOfPartyOffline () {
-  // Restore FactoryBase._getJsonLD to original for other tests:
-  FactoryBase._getJsonLD.restore()
-}
+const { takeThisPartyOffline, revertTakingOfPartyOffline } = require('./test-helper')
 
 describe('by-catalog-item-type', function () {
-  before(function () {
+  before(async function () {
     takeThisPartyOffline()
-    this.byCatalogItemType = require('../nypl-core-objects')('by-catalog-item-type')
+
+    this.byCatalogItemType = await require('../nypl-core-objects')('by-catalog-item-type')
   })
 
   after(revertTakingOfPartyOffline)

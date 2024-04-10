@@ -1,26 +1,10 @@
 const expect = require('chai').expect
-const sinon = require('sinon')
-const fs = require('fs')
-const path = require('path')
-const FactoryBase = require('../lib/factory_base')
-
-function takeThisPartyOffline () {
-  // Overwrite FactoryBase._getJsonLD with a stub that returns local json:
-  const mockedFulfillmentJSONLD = function () {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, './resources/fulfillment.json')))
-  }
-  sinon.stub(FactoryBase, '_getFulfillmentJsonLD').callsFake(mockedFulfillmentJSONLD)
-}
-
-function revertTakingOfPartyOffline () {
-  // Restore FactoryBase.prototype._getJsonLD to original for other tests:
-  FactoryBase._getFulfillmentJsonLD.restore()
-}
+const { takeThisPartyOffline, revertTakingOfPartyOffline } = require('./test-helper')
 
 describe('by-catalog-fulfillment', function () {
-  before(function () {
+  before(async function () {
     takeThisPartyOffline()
-    this.byFulfillment = require('../nypl-core-objects')('by-fulfillment')
+    this.byFulfillment = await require('../nypl-core-objects')('by-fulfillment')
   })
   after(revertTakingOfPartyOffline)
 
