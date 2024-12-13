@@ -34,6 +34,14 @@ describe('by-sierra-location', function () {
       })
     })
 
+    it('has a collectionAccessType property', function () {
+      Object.keys(this.bySierraLocation)
+        .forEach((code) => {
+          expect('collectionAccessType' in this.bySierraLocation[code])
+            .to.eql(true)
+        })
+    })
+
     it('has a deliverableToResolution property', function () {
       Object.keys(this.bySierraLocation)
         .forEach((code) => {
