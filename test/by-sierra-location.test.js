@@ -13,6 +13,7 @@ describe('by-sierra-location', function () {
   after(revertTakingOfPartyOffline)
 
   it('exports a simpleObject', function (done) {
+    console.log(this.bySierraLocation)
     expect(this.bySierraLocation).to.not.equal(undefined)
     expect(this.bySierraLocation).to.be.a('object')
     done()
