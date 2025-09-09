@@ -15,7 +15,8 @@ const mappingNames = [
   'by_sierra_location',
   'by_statuses',
   'by_catalog_item_type',
-  'by_fulfillment'
+  'by_fulfillment',
+  'by_collection'
 ]
 
 const filesWritten = []

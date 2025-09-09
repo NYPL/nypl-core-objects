@@ -4,6 +4,7 @@ const BySierraLocationFactory = require('./lib/by_sierra_location_factory')
 const ByPatronTypeFactory = require('./lib/by_patron_type_factory')
 const ByCatalogItemTypeFactory = require('./lib/by_catalog_item_type_factory')
 const ByFulfillmentFactory = require('./lib/by_fulfillment_factory')
+const ByCollectionFactory = require('./lib/by_collection_factory')
 const FactoryBase = require('./lib/factory_base')
 
 module.exports = (maptype) => {
@@ -20,6 +21,8 @@ module.exports = (maptype) => {
       return ByCatalogItemTypeFactory.createMapping()
     case 'by-m2-customer-code':
       return ByM2CustomerCodeFactory.createMapping()
+    case 'by-collection':
+      return ByCollectionFactory.createMapping()
     default:
       // Attempt to create a basic map based on maptype:
       // Will throw a MappingNameError if unrecognized
