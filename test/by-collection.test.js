@@ -33,5 +33,12 @@ describe('by-collection-id', function () {
         expect(collection.code).to.be.a('string')
       }
     })
+
+    it('has a locations URL path for each key', function () {
+      Object.keys(this.byCollection).forEach((collection) => {
+        const locationsPath = this.byCollection[collection].locationsPath
+        expect(locationsPath).to.be.a('string')
+      })
+    })
   })
 })
