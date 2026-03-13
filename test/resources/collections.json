@@ -8,704 +8,375 @@
   "@graph": [
     {
       "@id": "nyplCollection:bur",
-      "nyplLocation": {
-        "@id": "nyplLocation:bur51"
-      },
+      "nypl:locationsPath": "locations/snfl/yoseloff-business",
+      "nyplLocation": { "@id": "nyplLocation:bur51" },
       "skos:notation": "bur",
       "skos:prefLabel": "Yoseloff Business Center"
     },
     {
       "@id": "nyplCollection:mab",
+      "nypl:locationsPath": "locations/schwarzman/wallach-division/art-architecture-collection",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mab01"
-        },
-        {
-          "@id": "nyplLocation:mab0v"
-        },
-        {
-          "@id": "nyplLocation:mab82"
-        },
-        {
-          "@id": "nyplLocation:mab88"
-        },
-        {
-          "@id": "nyplLocation:mab89"
-        },
-        {
-          "@id": "nyplLocation:mab92"
-        },
-        {
-          "@id": "nyplLocation:mab98"
-        },
-        {
-          "@id": "nyplLocation:mab99"
-        },
-        {
-          "@id": "nyplLocation:mabb1"
-        },
-        {
-          "@id": "nyplLocation:mabb2"
-        },
-        {
-          "@id": "nyplLocation:mabb3"
-        },
-        {
-          "@id": "nyplLocation:mabm2"
-        },
-        {
-          "@id": "nyplLocation:rcmb2"
-        },
-        {
-          "@id": "nyplLocation:rcmb8"
-        },
-        {
-          "@id": "nyplLocation:rcmb9"
-        }
+        { "@id": "nyplLocation:mab01" },
+        { "@id": "nyplLocation:mab0v" },
+        { "@id": "nyplLocation:mab82" },
+        { "@id": "nyplLocation:mab88" },
+        { "@id": "nyplLocation:mab89" },
+        { "@id": "nyplLocation:mab92" },
+        { "@id": "nyplLocation:mab98" },
+        { "@id": "nyplLocation:mab99" },
+        { "@id": "nyplLocation:mabb1" },
+        { "@id": "nyplLocation:mabb2" },
+        { "@id": "nyplLocation:mabb3" },
+        { "@id": "nyplLocation:mabm2" },
+        { "@id": "nyplLocation:rcmb2" },
+        { "@id": "nyplLocation:rcmb8" },
+        { "@id": "nyplLocation:rcmb9" }
       ],
       "skos:notation": "mab",
       "skos:prefLabel": "Art & Architecture Collection"
     },
     {
       "@id": "nyplCollection:mac",
+      "nypl:locationsPath": "locations/schwarzman/rare-books-division/arents-collection",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mac82"
-        },
-        {
-          "@id": "nyplLocation:macc2"
-        }
+        { "@id": "nyplLocation:mac82" },
+        { "@id": "nyplLocation:macc2" }
       ],
       "skos:notation": "mac",
       "skos:prefLabel": "Arents Collection"
     },
     {
       "@id": "nyplCollection:mae",
+      "nypl:locationsPath": "locations/schwarzman/berg-collection-english-and-american-literature",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mae82"
-        },
-        {
-          "@id": "nyplLocation:mae92"
-        },
-        {
-          "@id": "nyplLocation:maee2"
-        }
+        { "@id": "nyplLocation:mae82" },
+        { "@id": "nyplLocation:mae92" },
+        { "@id": "nyplLocation:maee2" }
       ],
       "skos:notation": "mae",
       "skos:prefLabel": "Berg Collection"
     },
     {
       "@id": "nyplCollection:maf",
+      "nypl:locationsPath": "locations/schwarzman/jewish-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:maf32"
-        },
-        {
-          "@id": "nyplLocation:maf82"
-        },
-        {
-          "@id": "nyplLocation:maf88"
-        },
-        {
-          "@id": "nyplLocation:maf92"
-        },
-        {
-          "@id": "nyplLocation:maf98"
-        },
-        {
-          "@id": "nyplLocation:maf99"
-        },
-        {
-          "@id": "nyplLocation:maff1"
-        },
-        {
-          "@id": "nyplLocation:maff3"
-        },
-        {
-          "@id": "nyplLocation:rcmf2"
-        },
-        {
-          "@id": "nyplLocation:rcmf8"
-        },
-        {
-          "@id": "nyplLocation:rcmf9"
-        }
+        { "@id": "nyplLocation:maf32" },
+        { "@id": "nyplLocation:maf82" },
+        { "@id": "nyplLocation:maf88" },
+        { "@id": "nyplLocation:maf92" },
+        { "@id": "nyplLocation:maf98" },
+        { "@id": "nyplLocation:maf99" },
+        { "@id": "nyplLocation:maff1" },
+        { "@id": "nyplLocation:maff3" },
+        { "@id": "nyplLocation:rcmf2" },
+        { "@id": "nyplLocation:rcmf8" },
+        { "@id": "nyplLocation:rcmf9" }
       ],
       "skos:notation": "maf",
       "skos:prefLabel": "Dorot Jewish Division"
     },
     {
       "@id": "nyplCollection:mag",
+      "nypl:locationsPath": "locations/schwarzman/milstein",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mag82"
-        },
-        {
-          "@id": "nyplLocation:mag92"
-        },
-        {
-          "@id": "nyplLocation:mag98"
-        },
-        {
-          "@id": "nyplLocation:magg1"
-        },
-        {
-          "@id": "nyplLocation:magg2"
-        },
-        {
-          "@id": "nyplLocation:rcmg2"
-        },
-        {
-          "@id": "nyplLocation:rcmg8"
-        },
-        {
-          "@id": "nyplLocation:rcmg9"
-        },
-        {
-          "@id": "nyplLocation:magg3"
-        }
+        { "@id": "nyplLocation:mag82" },
+        { "@id": "nyplLocation:mag92" },
+        { "@id": "nyplLocation:mag98" },
+        { "@id": "nyplLocation:magg1" },
+        { "@id": "nyplLocation:magg2" },
+        { "@id": "nyplLocation:rcmg2" },
+        { "@id": "nyplLocation:rcmg8" },
+        { "@id": "nyplLocation:rcmg9" },
+        { "@id": "nyplLocation:magg3" }
       ],
       "skos:notation": "mag",
-      "skos:prefLabel": "Milstein Division"
+      "skos:prefLabel": "Milstein Division of United States History, Local History and Genealogy"
     },
     {
       "@id": "nyplCollection:mak",
+      "nypl:locationsPath": "locations/schwarzman/general-research-division/periodicals-room",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mak32"
-        },
-        {
-          "@id": "nyplLocation:mak82"
-        },
-        {
-          "@id": "nyplLocation:makk3"
-        }
+        { "@id": "nyplLocation:mak32" },
+        { "@id": "nyplLocation:mak82" },
+        { "@id": "nyplLocation:makk3" }
       ],
       "skos:notation": "mak",
       "skos:prefLabel": "DeWitt Wallace Periodical Room"
     },
     {
       "@id": "nyplCollection:mal",
+      "nypl:locationsPath": "locations/schwarzman/general-research-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mai32"
-        },
-        {
-          "@id": "nyplLocation:mai82"
-        },
-        {
-          "@id": "nyplLocation:mai92"
-        },
-        {
-          "@id": "nyplLocation:mal17"
-        },
-        {
-          "@id": "nyplLocation:mal23"
-        },
-        {
-          "@id": "nyplLocation:mal42"
-        },
-        {
-          "@id": "nyplLocation:mal72"
-        },
-        {
-          "@id": "nyplLocation:mal82"
-        },
-        {
-          "@id": "nyplLocation:mal92"
-        },
-        {
-          "@id": "nyplLocation:mala"
-        },
-        {
-          "@id": "nyplLocation:mala1"
-        },
-        {
-          "@id": "nyplLocation:malc"
-        },
-        {
-          "@id": "nyplLocation:mall1"
-        },
-        {
-          "@id": "nyplLocation:malm2"
-        },
-        {
-          "@id": "nyplLocation:maln"
-        },
-        {
-          "@id": "nyplLocation:maln1"
-        },
-        {
-          "@id": "nyplLocation:malv2"
-        },
-        {
-          "@id": "nyplLocation:malw"
-        },
-        {
-          "@id": "nyplLocation:malw1"
-        },
-        {
-          "@id": "nyplLocation:rc2ma"
-        },
-        {
-          "@id": "nyplLocation:rc2mj"
-        },
-        {
-          "@id": "nyplLocation:rcma2"
-        },
-        {
-          "@id": "nyplLocation:rcmi2"
-        },
-        {
-          "@id": "nyplLocation:rcmj2"
-        },
-        {
-          "@id": "nyplLocation:rcml2"
-        },
-        {
-          "@id": "nyplLocation:rcml8"
-        }
+        { "@id": "nyplLocation:mai32" },
+        { "@id": "nyplLocation:mai82" },
+        { "@id": "nyplLocation:mai92" },
+        { "@id": "nyplLocation:mal17" },
+        { "@id": "nyplLocation:mal23" },
+        { "@id": "nyplLocation:mal42" },
+        { "@id": "nyplLocation:mal72" },
+        { "@id": "nyplLocation:mal82" },
+        { "@id": "nyplLocation:mal92" },
+        { "@id": "nyplLocation:mala" },
+        { "@id": "nyplLocation:mala1" },
+        { "@id": "nyplLocation:malc" },
+        { "@id": "nyplLocation:mall1" },
+        { "@id": "nyplLocation:malm2" },
+        { "@id": "nyplLocation:maln" },
+        { "@id": "nyplLocation:maln1" },
+        { "@id": "nyplLocation:malv2" },
+        { "@id": "nyplLocation:malw" },
+        { "@id": "nyplLocation:malw1" },
+        { "@id": "nyplLocation:rc2ma" },
+        { "@id": "nyplLocation:rc2mj" },
+        { "@id": "nyplLocation:rcma2" },
+        { "@id": "nyplLocation:rcmi2" },
+        { "@id": "nyplLocation:rcmj2" },
+        { "@id": "nyplLocation:rcml2" },
+        { "@id": "nyplLocation:rcml8" }
       ],
       "skos:notation": "mal",
       "skos:prefLabel": "General Research Division"
     },
     {
       "@id": "nyplCollection:mao",
+      "nypl:locationsPath": "locations/schwarzman/manuscripts-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mao82"
-        },
-        {
-          "@id": "nyplLocation:mao92"
-        },
-        {
-          "@id": "nyplLocation:maor2"
-        },
-        {
-          "@id": "nyplLocation:rcmo2"
-        }
+        { "@id": "nyplLocation:mao82" },
+        { "@id": "nyplLocation:mao92" },
+        { "@id": "nyplLocation:maor2" },
+        { "@id": "nyplLocation:rcmo2" }
       ],
       "skos:notation": "mao",
       "skos:prefLabel": "Manuscripts and Archives Division"
     },
     {
       "@id": "nyplCollection:map",
+      "nypl:locationsPath": "locations/schwarzman/map-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:map08"
-        },
-        {
-          "@id": "nyplLocation:map32"
-        },
-        {
-          "@id": "nyplLocation:map42"
-        },
-        {
-          "@id": "nyplLocation:map82"
-        },
-        {
-          "@id": "nyplLocation:map92"
-        },
-        {
-          "@id": "nyplLocation:map98"
-        },
-        {
-          "@id": "nyplLocation:map99"
-        },
-        {
-          "@id": "nyplLocation:mapp1"
-        },
-        {
-          "@id": "nyplLocation:mapp2"
-        },
-        {
-          "@id": "nyplLocation:mapp3"
-        },
-        {
-          "@id": "nyplLocation:mapp8"
-        },
-        {
-          "@id": "nyplLocation:mapp9"
-        },
-        {
-          "@id": "nyplLocation:rcmp2"
-        },
-        {
-          "@id": "nyplLocation:rcmp8"
-        },
-        {
-          "@id": "nyplLocation:rcmp9"
-        }
+        { "@id": "nyplLocation:map08" },
+        { "@id": "nyplLocation:map32" },
+        { "@id": "nyplLocation:map42" },
+        { "@id": "nyplLocation:map82" },
+        { "@id": "nyplLocation:map92" },
+        { "@id": "nyplLocation:map98" },
+        { "@id": "nyplLocation:map99" },
+        { "@id": "nyplLocation:mapp1" },
+        { "@id": "nyplLocation:mapp2" },
+        { "@id": "nyplLocation:mapp3" },
+        { "@id": "nyplLocation:mapp8" },
+        { "@id": "nyplLocation:mapp9" },
+        { "@id": "nyplLocation:rcmp2" },
+        { "@id": "nyplLocation:rcmp8" },
+        { "@id": "nyplLocation:rcmp9" }
       ],
       "skos:notation": "map",
       "skos:prefLabel": "Lionel Pincus and Princess Firyal Map Division"
     },
     {
       "@id": "nyplCollection:maq",
+      "nypl:locationsPath": "locations/schwarzman/pforzheimer-collection-shelley-and-his-circle",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:maqq2"
-        },
-        {
-          "@id": "nyplLocation:rcmq2"
-        }
+        { "@id": "nyplLocation:maqq2" },
+        { "@id": "nyplLocation:rcmq2" }
       ],
       "skos:notation": "maq",
       "skos:prefLabel": "Pforzheimer Collection"
     },
     {
       "@id": "nyplCollection:mar",
+      "nypl:locationsPath": "locations/schwarzman/rare-books-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mar82"
-        },
-        {
-          "@id": "nyplLocation:mar92"
-        },
-        {
-          "@id": "nyplLocation:mard2"
-        },
-        {
-          "@id": "nyplLocation:marr2"
-        },
-        {
-          "@id": "nyplLocation:rcmr2"
-        }
+        { "@id": "nyplLocation:mar82" },
+        { "@id": "nyplLocation:mar92" },
+        { "@id": "nyplLocation:mard2" },
+        { "@id": "nyplLocation:marr2" },
+        { "@id": "nyplLocation:rcmr2" }
       ],
       "skos:notation": "mar",
       "skos:prefLabel": "Rare Book Division"
     },
     {
       "@id": "nyplCollection:mas",
+      "nypl:locationsPath": "locations/schwarzman/wallach-division/photography-collection",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mas82"
-        },
-        {
-          "@id": "nyplLocation:mas92"
-        },
-        {
-          "@id": "nyplLocation:masb2"
-        },
-        {
-          "@id": "nyplLocation:mass2"
-        },
-        {
-          "@id": "nyplLocation:masu2"
-        },
-        {
-          "@id": "nyplLocation:rcms2"
-        }
+        { "@id": "nyplLocation:mas82" },
+        { "@id": "nyplLocation:mas92" },
+        { "@id": "nyplLocation:masb2" },
+        { "@id": "nyplLocation:mass2" },
+        { "@id": "nyplLocation:masu2" },
+        { "@id": "nyplLocation:rcms2" }
       ],
       "skos:notation": "mas",
       "skos:prefLabel": "Photography Collection"
     },
     {
       "@id": "nyplCollection:mau",
+      "nypl:locationsPath": "locations/schwarzman/wallach-division/print-collection",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:mauu1"
-        },
-        {
-          "@id": "nyplLocation:mauu2"
-        }
+        { "@id": "nyplLocation:mauu1" },
+        { "@id": "nyplLocation:mauu2" }
       ],
       "skos:notation": "mau",
       "skos:prefLabel": "Print Collection"
     },
     {
       "@id": "nyplCollection:pad",
+      "nypl:locationsPath": "locations/lpa/jerome-robbins-dance-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:pad11"
-        },
-        {
-          "@id": "nyplLocation:pad22"
-        },
-        {
-          "@id": "nyplLocation:pad28"
-        },
-        {
-          "@id": "nyplLocation:pad32"
-        },
-        {
-          "@id": "nyplLocation:pad38"
-        },
-        {
-          "@id": "nyplLocation:pad42"
-        },
-        {
-          "@id": "nyplLocation:rcpd2"
-        },
-        {
-          "@id": "nyplLocation:rcpd8"
-        },
-        {
-          "@id": "nyplLocation:rcpd9"
-        }
+        { "@id": "nyplLocation:pad11" },
+        { "@id": "nyplLocation:pad22" },
+        { "@id": "nyplLocation:pad28" },
+        { "@id": "nyplLocation:pad32" },
+        { "@id": "nyplLocation:pad38" },
+        { "@id": "nyplLocation:pad42" },
+        { "@id": "nyplLocation:rcpd2" },
+        { "@id": "nyplLocation:rcpd8" },
+        { "@id": "nyplLocation:rcpd9" }
       ],
       "skos:notation": "pad",
       "skos:prefLabel": "Dance Division"
     },
     {
       "@id": "nyplCollection:paf",
+      "nypl:locationsPath": "locations/lpa/theatre-film-and-tape-archive",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:paf28"
-        },
-        {
-          "@id": "nyplLocation:paf29"
-        },
-        {
-          "@id": "nyplLocation:rcpf2"
-        },
-        {
-          "@id": "nyplLocation:rcpf8"
-        },
-        {
-          "@id": "nyplLocation:rcpf9"
-        }
+        { "@id": "nyplLocation:paf28" },
+        { "@id": "nyplLocation:paf29" },
+        { "@id": "nyplLocation:rcpf2" },
+        { "@id": "nyplLocation:rcpf8" },
+        { "@id": "nyplLocation:rcpf9" }
       ],
       "skos:notation": "paf",
       "skos:prefLabel": "Theatre on Film and Tape Archive"
     },
     {
       "@id": "nyplCollection:pah",
+      "nypl:locationsPath": "locations/lpa/rodgers-and-hammerstein-archives-recorded-sound",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:pah11"
-        },
-        {
-          "@id": "nyplLocation:pah22"
-        },
-        {
-          "@id": "nyplLocation:pah32"
-        },
-        {
-          "@id": "nyplLocation:pah38"
-        },
-        {
-          "@id": "nyplLocation:pah42"
-        },
-        {
-          "@id": "nyplLocation:rcph2"
-        },
-        {
-          "@id": "nyplLocation:rcph8"
-        },
-        {
-          "@id": "nyplLocation:rcph9"
-        }
+        { "@id": "nyplLocation:pah11" },
+        { "@id": "nyplLocation:pah22" },
+        { "@id": "nyplLocation:pah32" },
+        { "@id": "nyplLocation:pah38" },
+        { "@id": "nyplLocation:pah42" },
+        { "@id": "nyplLocation:rcph2" },
+        { "@id": "nyplLocation:rcph8" },
+        { "@id": "nyplLocation:rcph9" }
       ],
       "skos:notation": "pah",
       "skos:prefLabel": "Archives of Recorded Sound"
     },
     {
       "@id": "nyplCollection:pam",
+      "nypl:locationsPath": "locations/lpa/music-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:pam11"
-        },
-        {
-          "@id": "nyplLocation:pam22"
-        },
-        {
-          "@id": "nyplLocation:pam32"
-        },
-        {
-          "@id": "nyplLocation:pam38"
-        },
-        {
-          "@id": "nyplLocation:pam42"
-        },
-        {
-          "@id": "nyplLocation:pam48"
-        },
-        {
-          "@id": "nyplLocation:rcpm2"
-        },
-        {
-          "@id": "nyplLocation:rcpm8"
-        },
-        {
-          "@id": "nyplLocation:rcpm9"
-        }
+        { "@id": "nyplLocation:pam11" },
+        { "@id": "nyplLocation:pam22" },
+        { "@id": "nyplLocation:pam32" },
+        { "@id": "nyplLocation:pam38" },
+        { "@id": "nyplLocation:pam42" },
+        { "@id": "nyplLocation:pam48" },
+        { "@id": "nyplLocation:rcpm2" },
+        { "@id": "nyplLocation:rcpm8" },
+        { "@id": "nyplLocation:rcpm9" }
       ],
       "skos:notation": "pam",
       "skos:prefLabel": "Music Division"
     },
     {
       "@id": "nyplCollection:pat",
+      "nypl:locationsPath": "locations/lpa/billy-rose-theatre-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:pat11"
-        },
-        {
-          "@id": "nyplLocation:pat22"
-        },
-        {
-          "@id": "nyplLocation:pat28"
-        },
-        {
-          "@id": "nyplLocation:pat32"
-        },
-        {
-          "@id": "nyplLocation:pat38"
-        },
-        {
-          "@id": "nyplLocation:pat42"
-        },
-        {
-          "@id": "nyplLocation:pat48"
-        },
-        {
-          "@id": "nyplLocation:rcpt2"
-        },
-        {
-          "@id": "nyplLocation:rcpt8"
-        },
-        {
-          "@id": "nyplLocation:rcpt9"
-        }
+        { "@id": "nyplLocation:pat11" },
+        { "@id": "nyplLocation:pat22" },
+        { "@id": "nyplLocation:pat28" },
+        { "@id": "nyplLocation:pat32" },
+        { "@id": "nyplLocation:pat38" },
+        { "@id": "nyplLocation:pat42" },
+        { "@id": "nyplLocation:pat48" },
+        { "@id": "nyplLocation:rcpt2" },
+        { "@id": "nyplLocation:rcpt8" },
+        { "@id": "nyplLocation:rcpt9" }
       ],
       "skos:notation": "pat",
       "skos:prefLabel": "Theatre Division"
     },
     {
       "@id": "nyplCollection:pav",
+      "nypl:locationsPath": "about/locations/lpa/circulating-collections/reserve-film",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:pav22"
-        },
-        {
-          "@id": "nyplLocation:pav28"
-        },
-        {
-          "@id": "nyplLocation:pav32"
-        },
-        {
-          "@id": "nyplLocation:pav38"
-        },
-        {
-          "@id": "nyplLocation:rcpr2"
-        },
-        {
-          "@id": "nyplLocation:rcpr8"
-        },
-        {
-          "@id": "nyplLocation:rcpr9"
-        }
+        { "@id": "nyplLocation:pav22" },
+        { "@id": "nyplLocation:pav28" },
+        { "@id": "nyplLocation:pav32" },
+        { "@id": "nyplLocation:pav38" },
+        { "@id": "nyplLocation:rcpr2" },
+        { "@id": "nyplLocation:rcpr8" },
+        { "@id": "nyplLocation:rcpr9" }
       ],
       "skos:notation": "pav",
       "skos:prefLabel": "Reserve Film and Video"
     },
     {
       "@id": "nyplCollection:scb",
+      "nypl:locationsPath": "locations/schomburg/moving-image-and-recorded-sound-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:scbb2"
-        },
-        {
-          "@id": "nyplLocation:rccb2"
-        },
-        {
-          "@id": "nyplLocation:rccb8"
-        },
-        {
-          "@id": "nyplLocation:rccb9"
-        }
+        { "@id": "nyplLocation:scbb2" },
+        { "@id": "nyplLocation:rccb2" },
+        { "@id": "nyplLocation:rccb8" },
+        { "@id": "nyplLocation:rccb9" }
       ],
       "skos:notation": "scb",
       "skos:prefLabel": "Moving Image and Recorded Sound Division"
     },
     {
       "@id": "nyplCollection:scc",
+      "nypl:locationsPath": "locations/schomburg/art-and-artifacts-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:sccc2"
-        },
-        {
-          "@id": "nyplLocation:sccc3"
-        },
-        {
-          "@id": "nyplLocation:rcca9"
-        }
+        { "@id": "nyplLocation:sccc2" },
+        { "@id": "nyplLocation:sccc3" },
+        { "@id": "nyplLocation:rcca9" }
       ],
       "skos:notation": "scc",
       "skos:prefLabel": "Art and Artifacts Division"
     },
     {
       "@id": "nyplCollection:scd",
+      "nypl:locationsPath": "locations/schomburg/manuscripts-archives-and-rare-books-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:scdd1"
-        },
-        {
-          "@id": "nyplLocation:scdd2"
-        },
-        {
-          "@id": "nyplLocation:rccd2"
-        },
-        {
-          "@id": "nyplLocation:rccd8"
-        },
-        {
-          "@id": "nyplLocation:rccd9"
-        }
+        { "@id": "nyplLocation:scdd1" },
+        { "@id": "nyplLocation:scdd2" },
+        { "@id": "nyplLocation:rccd2" },
+        { "@id": "nyplLocation:rccd8" },
+        { "@id": "nyplLocation:rccd9" }
       ],
       "skos:notation": "scd",
       "skos:prefLabel": "Manuscripts, Archives and Rare Books Division"
     },
     {
       "@id": "nyplCollection:sce",
+      "nypl:locationsPath": "locations/schomburg/photographs-and-prints-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:scedd"
-        },
-        {
-          "@id": "nyplLocation:scee2"
-        },
-        {
-          "@id": "nyplLocation:rcce2"
-        },
-        {
-          "@id": "nyplLocation:rcce8"
-        },
-        {
-          "@id": "nyplLocation:rcce9"
-        }
+        { "@id": "nyplLocation:scedd" },
+        { "@id": "nyplLocation:scee2" },
+        { "@id": "nyplLocation:rcce2" },
+        { "@id": "nyplLocation:rcce8" },
+        { "@id": "nyplLocation:rcce9" }
       ],
       "skos:notation": "sce",
       "skos:prefLabel": "Photographs and Prints Division"
     },
     {
       "@id": "nyplCollection:scf",
+      "nypl:locationsPath": "locations/schomburg/jbh-research-and-reference-division",
       "nyplLocation": [
-        {
-          "@id": "nyplLocation:scff1"
-        },
-        {
-          "@id": "nyplLocation:scff2"
-        },
-        {
-          "@id": "nyplLocation:scff3"
-        },
-        {
-          "@id": "nyplLocation:rc2cf"
-        },
-        {
-          "@id": "nyplLocation:rc2cm"
-        },
-        {
-          "@id": "nyplLocation:rccf2"
-        },
-        {
-          "@id": "nyplLocation:rccf8"
-        },
-        {
-          "@id": "nyplLocation:rccf9"
-        }
+        { "@id": "nyplLocation:scff1" },
+        { "@id": "nyplLocation:scff2" },
+        { "@id": "nyplLocation:scff3" },
+        { "@id": "nyplLocation:rc2cf" },
+        { "@id": "nyplLocation:rc2cm" },
+        { "@id": "nyplLocation:rccf2" },
+        { "@id": "nyplLocation:rccf8" },
+        { "@id": "nyplLocation:rccf9" }
       ],
       "skos:notation": "scf",
       "skos:prefLabel": "Jean Blackwell Hutson Research and Reference Division"
