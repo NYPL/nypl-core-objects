@@ -5,6 +5,7 @@ const ByPatronTypeFactory = require('./lib/by_patron_type_factory')
 const ByCatalogItemTypeFactory = require('./lib/by_catalog_item_type_factory')
 const ByFulfillmentFactory = require('./lib/by_fulfillment_factory')
 const ByCollectionFactory = require('./lib/by_collection_factory')
+const ByCheckinCardStatusFactory = require('./lib/by_checkin_card_status_factory')
 const FactoryBase = require('./lib/factory_base')
 
 module.exports = (maptype) => {
@@ -23,6 +24,8 @@ module.exports = (maptype) => {
       return ByM2CustomerCodeFactory.createMapping()
     case 'by-collection':
       return ByCollectionFactory.createMapping()
+    case 'by-checkin-card-status':
+      return ByCheckinCardStatusFactory.createMapping()
     default:
       // Attempt to create a basic map based on maptype:
       // Will throw a MappingNameError if unrecognized
