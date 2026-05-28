@@ -318,7 +318,7 @@
       "skos:prefLabel": "JC"
     },
     {
-      "@id": "http://data.nypl.org/recapCustomerCodes/MLdupe",
+      "@id": "http://data.nypl.org/recapCustomerCodes/hd:ML",
       "@type": "nypl:RecapCustomerCode",
       "nypl:deliverableTo": [
         {
@@ -365,7 +365,7 @@
       "nypl:owner": {
         "@id": "nyplOrg:0004"
       },
-      "skos:notation": "MLdupe",
+      "skos:notation": "ML",
       "skos:prefLabel": "LOEB MUSIC LIBRARY"
     },
     {
@@ -989,7 +989,7 @@
       "skos:prefLabel": "JD"
     },
     {
-      "@id": "http://data.nypl.org/recapCustomerCodes/GUT",
+      "@id": "http://data.nypl.org/recapCustomerCodes/hd:GUT",
       "@type": "nypl:RecapCustomerCode",
       "nypl:deliverableTo": [
         {
@@ -3107,7 +3107,7 @@
       "skos:prefLabel": "Oral History"
     },
     {
-      "@id": "http://data.nypl.org/recapCustomerCodes/HB",
+      "@id": "http://data.nypl.org/recapCustomerCodes/hd:HB",
       "@type": "nypl:RecapCustomerCode",
       "nypl:deliverableTo": [
         {

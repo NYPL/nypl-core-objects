@@ -88,6 +88,7 @@ Once the PR has been approved and merged, check out the target branch locally an
 1. **Bump the version**:
  - Bump the version number in `package.json`
  - Run `nvm use; npm i` to update `package-lock.json`
+ - Update CHANGELOG.md
  - Commit changes
  - Git tag it (e.g. `git tag -a v2.1.1`)
  - Push changes to origin (including tags via `git push --tags`)
