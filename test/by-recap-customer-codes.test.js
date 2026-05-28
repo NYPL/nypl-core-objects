@@ -78,4 +78,29 @@ describe('by-recap-customer-codes', function () {
     expect(deliveryLocations).to.be.a('array')
     expect(deliveryLocations.length).to.be.greaterThan(5)
   })
+
+  describe('handling alternative depositories', function () {
+    it('resolves hd codes whether prefixed or not', function () {
+      const deliveryLocations = [
+        this.byRecapCustomerCode.GUT.sierraDeliveryLocations,
+        this.byRecapCustomerCode['hd:GUT'].sierraDeliveryLocations
+      ]
+
+      expect(deliveryLocations[0]).to.be.a('array')
+      expect(deliveryLocations[0].length).to.be.greaterThan(10)
+      expect(deliveryLocations[0]).to.deep.equal(deliveryLocations[1])
+    })
+
+    it('in case of recap/hd code collision, favor recap code', function () {
+      // The CUL ML code isn't deliverable anywhere:
+      const deliveryLocations = this.byRecapCustomerCode.ML.sierraDeliveryLocations
+      expect(deliveryLocations).to.be.a('array')
+      expect(deliveryLocations.length).to.be.empty
+
+      // The HL ML code is deliverable to many places:
+      const hdDeliveryLocations = this.byRecapCustomerCode['hd:ML'].sierraDeliveryLocations
+      expect(hdDeliveryLocations).to.be.a('array')
+      expect(hdDeliveryLocations.length).to.be.greaterThan(10)
+    })
+  })
 })
