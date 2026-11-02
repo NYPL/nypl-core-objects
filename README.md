@@ -84,6 +84,7 @@ Once the PR has been approved and merged, check out the target branch locally an
 2. **Publish changes to NPMJS**:
  - If publishing an update to the default major branch (2.x at writing):
    - Run `npm publish --dry-run` to verify nothing is being packaged that should not be
+   - Run `npm publish` to push for real
 
 3. **Optionally publish changes to S3**:
  - To push changes to S3 (i.e. if the changes are needed by non-Node apps):
