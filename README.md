@@ -1,14 +1,6 @@
 # NYPL Core Objects
 
-Master: [![Build Status](https://travis-ci.org/NYPL/nypl-core-objects.svg?branch=master)](https://travis-ci.org/NYPL/nypl-core-objects)
-
-As of version 3.0.0, this module fetches data asyncronously and depends on Node 18.
-
-Support for v2 is dropped because v2 -> v3 is a easy migration. Apps using version 2x should update to Node18+ and use version 3x.
-
-Apps using version 1x should also update to Node18 and use v3. However, because apps using that version are on much older Nodes (i.e. have a steeper migration path), we will continue to support the 1x version of this module for a while - until all apps start using the 3x version of this module.
-
-This node module loads JSON-LD documents from `NYPL/nypl-core` and turns them into useful lookups for use in your app. These lookups are intentionally simplified representations of the data and do not include all properties in the original JSON-LD documents.
+This Node module loads JSON-LD documents from `NYPL/nypl-core` and turns them into useful lookups for use in your app. These lookups are intentionally simplified representations of the data and do not include all properties in the original JSON-LD documents.
 
 ### It Can Also Write Those Mappings To Disk
 
@@ -77,11 +69,7 @@ const { nyplSource, id, type } = sourceMapper.splitIdentifier('b12082323')
 
 ## Git Workflow
 
-This repo has two target branches:
- - `master` for Node14+ support (module versions 3x)
- - `v1-node6` for Node6 support (module version 1x)
-
-All PRs should target `master` and/or `v1-node6`. Business logic changes should generally result in two PRs - one for each target branch.
+All PRs should target `main`.
 
 Once the PR has been approved and merged, check out the target branch locally and:
 
@@ -90,17 +78,12 @@ Once the PR has been approved and merged, check out the target branch locally an
  - Run `nvm use; npm i` to update `package-lock.json`
  - Update CHANGELOG.md
  - Commit changes
- - Git tag it (e.g. `git tag -a v2.1.1`)
+ - Git tag it (e.g. `git tag -a v3.2.0`)
  - Push changes to origin (including tags via `git push --tags`)
 
 2. **Publish changes to NPMJS**:
  - If publishing an update to the default major branch (2.x at writing):
    - Run `npm publish --dry-run` to verify nothing is being packaged that should not be
-   - `npm publish`
- - If publishing an older version (e.g. a patch to `v1.x`) add a `tag` to prevent NPM from updating the `latest` tag:
-   - do not run `npm publish --dry-run`. This flag is not supported by node 6. 
-   - cross your fingers
-   - `npm publish --tag legacy-node6-support`
 
 3. **Optionally publish changes to S3**:
  - To push changes to S3 (i.e. if the changes are needed by non-Node apps):
