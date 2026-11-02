@@ -1,21 +1,19 @@
 {
   "name": "@nypl/nypl-core-objects",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Exposes objects from NYPL/nypl-core as easy-to-work-with datastructures",
   "main": "nypl-core-objects.js",
   "dependencies": {
-    "axios": "^1.6.8",
-    "csv": "^5.3.2",
-    "csv-stringify": "^5.6.0",
+    "axios": "^1.21.0",
     "just-flatten": "^1.0.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^11.7.5",
+    "mocha": "^12.0.3",
     "nock": "^13.5.4",
     "sinon": "2.3.6",
-    "standard": "^16.0.4"
+    "standard": "^17.1.2"
   },
   "scripts": {
     "test": "./node_modules/.bin/standard --env mocha && ./node_modules/.bin/mocha test",
